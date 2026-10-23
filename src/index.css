@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background-color: #f8fafc;
-  color: #1e293b;
+  background-color: #121824; /* Dark theme background */
+  color: #f8fafc;
 }
 
 .app-container {
@@ -15,7 +15,7 @@ header h1 {
   font-size: 1.875rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #0f172a;
+  color: #f8fafc;
 }
 
 .summary-strip {
@@ -25,10 +25,10 @@ header h1 {
 }
 
 .summary-item {
-  background: white;
+  background: #1e293b;
   padding: 1rem 1.25rem;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #334155;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,23 +38,78 @@ header h1 {
 .summary-count {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #2563eb;
+  color: #38bdf8;
 }
 
 .summary-label {
   font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+/* Controls layout: status filters on left, search box on right */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.status-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.status-filters button {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.status-filters button:hover {
+  background: #334155;
+  color: #f8fafc;
+}
+
+.status-filters button.active {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  color: white;
+}
+
+.search-filter input {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  min-width: 240px;
+  outline: none;
+}
+
+.search-filter input::placeholder {
   color: #64748b;
 }
 
-.controls {
-  margin-bottom: 1.5rem;
+.search-filter input:focus {
+  border-color: #0ea5e9;
 }
 
 .controls select {
   padding: 0.5rem;
   border-radius: 6px;
-  border: 1px solid #cbd5e1;
-  background: white;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #f8fafc;
 }
 
 .card-grid {
@@ -63,10 +118,10 @@ header h1 {
 }
 
 .application-card {
-  background: white;
+  background: #1e293b;
+  border: 1px solid #334155;
   padding: 1.25rem;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .card-header {
@@ -79,11 +134,12 @@ header h1 {
 .card-header h3 {
   margin: 0 0 0.25rem 0;
   font-size: 1.125rem;
+  color: #f8fafc;
 }
 
 .company-name {
   margin: 0;
-  color: #64748b;
+  color: #94a3b8;
   font-size: 0.9rem;
 }
 
@@ -95,13 +151,22 @@ header h1 {
   text-transform: uppercase;
 }
 
-.status-applied { background: #e0f2fe; color: #0369a1; }
-.status-interview { background: #fef3c7; color: #b45309; }
-.status-offer { background: #dcfce7; color: #15803d; }
-.status-rejected { background: #fee2e2; color: #b91c1c; }
+.status-applied { background: rgba(3, 105, 161, 0.2); color: #38bdf8; }
+.status-interview { background: rgba(180, 83, 9, 0.2); color: #fbbf24; }
+.status-offer { background: rgba(21, 128, 61, 0.2); color: #4ade80; }
+.status-rejected { background: rgba(185, 28, 28, 0.2); color: #f87171; }
 
 .card-details p {
   margin: 0.35rem 0;
   font-size: 0.875rem;
-  color: #475569;
+  color: #94a3b8;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #94a3b8;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
 }
